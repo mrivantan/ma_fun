@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -311,12 +309,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Handwriting\HandwritingPointsManager.cs" />
+    <Compile Include="Assets\Scripts\Handwriting\MouseInput.cs" />
     <Compile Include="Assets\Scripts\one_dollar\OneDollar.cs" />
-    <Compile Include="Assets\Scripts\one_dollar\Point.cs" />
-    <Compile Include="Assets\Scripts\one_dollar\Rectangle.cs" />
-    <Compile Include="Assets\Scripts\one_dollar\Result.cs" />
-    <Compile Include="Assets\Scripts\one_dollar\Unistroke.cs" />
-    <Compile Include="Assets\Scripts\one_dollar\Util.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Model.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Point.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Rectangle.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Result.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\StrokeMeta_Struct.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Unistroke.cs" />
+    <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Util.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\BestMatchStrokeDisplay.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\DataController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\HandwritingController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModel.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionUI.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ToggleVisibleUI.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\UpdateModelListCount.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
