@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Dollar.One;
 
 public class UIModel : MonoBehaviour {
 
-    public Dollar.One.StrokeMeta currentMeta;
+    public StrokeMeta currentMeta;
 
     public string strokeName;
     public string strokeLabel;
@@ -12,14 +13,17 @@ public class UIModel : MonoBehaviour {
     public int variantIndex;
     public string description;
     public int descriptionIndex;
-    public string test;
+    //public string test;
     public float bestPositiveMatchScore;
     public float bestNegativeMatchScore;
     public int positiveListCount;
-    public int negativeIntCount;
-    public Dollar.One.Point[] strokeInputPoints;
-    public Dollar.One.Point[] bestPositiveMatchPoints;
-    public Dollar.One.Point[] bestNegativeMatchPoints;
+    public int negativeListCount;
+    public Point[] strokeInputPoints;
+    public Point[] bestPositiveMatchPoints;
+    public Point[] bestNegativeMatchPoints;
+
+    public Vector3[] currentInputWorldPoints;
+
 
     public float BestOverallMatchScore
     {
@@ -29,11 +33,25 @@ public class UIModel : MonoBehaviour {
         }
     }
 
-    public Dollar.One.Point[] BestOverallMatchPoints
+    public Point[] BestOverallMatchPoints
     {
         get
         {
             return (bestPositiveMatchScore >= bestNegativeMatchScore) ? bestPositiveMatchPoints : bestNegativeMatchPoints;
         }
     }
+
+    public string TestResult
+    {
+        get
+        {
+            string result = "";
+            if (bestPositiveMatchScore > bestNegativeMatchScore) result = StrokeType.test_positive;
+            else if (bestPositiveMatchScore < bestNegativeMatchScore) result = StrokeType.test_negative;
+            return result;
+        }
+    }
+
 }
+[System.Serializable]
+public enum HandwritingDisplayType { InputLive, InputResult, MatchPositive, MatchNegative}

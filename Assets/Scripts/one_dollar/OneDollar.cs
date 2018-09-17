@@ -24,7 +24,7 @@ namespace Dollar.One {
 
 
 
-        public Result Recognize(Point[] points)
+        public Result Recognize(Point[] points, Model.StrokeTypeTest test)
         {
             Result result;
 
@@ -35,7 +35,7 @@ namespace Dollar.One {
             float b = float.PositiveInfinity;
             int u = -1;
 
-            List<Unistroke> unistrokes = model.GetDataSet();
+            List<Unistroke> unistrokes = model.GetDataSet(test);
 
             for(int i = 0; i < unistrokes.Count; i++)
             {

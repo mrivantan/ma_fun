@@ -17,6 +17,7 @@ namespace Dollar.One {
 
         public Dictionary<string, StrokeMeta> strokeDictionary = new Dictionary<string, StrokeMeta>();
 
+        public enum StrokeTypeTest { Negative, Positive, All};
         public Model()
         {
             string[] none = { StrokeType.variant_none };
@@ -78,21 +79,41 @@ namespace Dollar.One {
             //    Debug.Log(u.Points.Length);
         }
 
-        public List<Unistroke> GetDataSet()
+        public List<Unistroke> GetDataSet(StrokeTypeTest test)
         {
-            if (positiveList.Count == 0)
+            switch (test)
             {
-                strokeClassification.test = StrokeType.test_positive;
-                positiveList = GetUnistrokesFromFile(strokeClassification);
+                case StrokeTypeTest.Negative:
+                    if (negativeList.Count == 0)
+                    {
+                        strokeClassification.test = StrokeType.test_negative;
+                        negativeList = GetUnistrokesFromFile(strokeClassification);
+                    }
+                    return new List<Unistroke>(negativeList);
+                case StrokeTypeTest.Positive:
+                    if (positiveList.Count == 0)
+                    {
+                        strokeClassification.test = StrokeType.test_positive;
+                        positiveList = GetUnistrokesFromFile(strokeClassification);
+                    }
+                     return new List<Unistroke>(positiveList);
+
+                default:
+                    if (positiveList.Count == 0)
+                    {
+                        strokeClassification.test = StrokeType.test_positive;
+                        positiveList = GetUnistrokesFromFile(strokeClassification);
+                    }
+                    if (negativeList.Count == 0)
+                    {
+                        strokeClassification.test = StrokeType.test_negative;
+                        negativeList = GetUnistrokesFromFile(strokeClassification);
+                    }
+                    List<Unistroke> result = new List<Unistroke>(positiveList);
+                    result.AddRange(negativeList);
+                    return result;
             }
-            if (negativeList.Count == 0)
-            {
-                strokeClassification.test = StrokeType.test_negative;
-                negativeList = GetUnistrokesFromFile(strokeClassification);
-            }
-            List<Unistroke> result = new List<Unistroke>(positiveList);
-            result.AddRange(negativeList);
-            return result;
+            
         }
 
         public List<Unistroke> GetPositiveDataSet()

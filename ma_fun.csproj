@@ -309,8 +309,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Handwriting\HandwritingPointsManager.cs" />
-    <Compile Include="Assets\Scripts\Handwriting\MouseInput.cs" />
     <Compile Include="Assets\Scripts\one_dollar\OneDollar.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Model.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Point.cs" />
@@ -319,14 +317,16 @@
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\StrokeMeta_Struct.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Unistroke.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Util.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\BestMatchStrokeDisplay.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\DataController.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\HandwritingController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\HandwritingMV\HandwritingDisplay.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\HandwritingController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\HandwritingPointsManager.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\MouseInput.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModel.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelController.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionUI.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ResultInfoMV\BestMatchScore.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionVM\StrokeSelectionUI.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionVM\UpdateModelListCount.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ToggleVisibleUI.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\UpdateModelListCount.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
