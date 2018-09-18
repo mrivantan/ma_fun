@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class BestMatchScore : MonoBehaviour {
 
-    public enum ScoreType { Overall, Positive, Negative};
+    public enum ScoreType { Overall, Positive, Negative, OverallText};
 
     public UIModel uiModel;
 
@@ -24,6 +24,9 @@ public class BestMatchScore : MonoBehaviour {
         {
             case ScoreType.Overall:
                 text.text = uiModel.BestOverallMatchScore.ToString();
+                break;
+            case ScoreType.OverallText:
+                text.text = uiModel.BestOverallMatchText;
                 break;
             case ScoreType.Positive:
                 text.text = uiModel.bestPositiveMatchScore.ToString();

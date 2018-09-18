@@ -323,7 +323,9 @@
     <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\MouseInput.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModel.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelManager.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ResultInfoMV\BestMatchScore.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\ResultInfoMV\TextColorFilter.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionVM\StrokeSelectionUI.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\StrokeSelectionVM\UpdateModelListCount.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ToggleVisibleUI.cs" />

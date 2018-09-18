@@ -62,7 +62,15 @@ namespace Dollar.One {
         }
 
         #region STOKE META API
-
+        /// <summary>
+        /// load model from playerprefs. Used by UI
+        /// </summary>
+        public void Init()
+        {
+            string strokeName = PlayerPrefs.GetString("StrokeName", StrokeType.name_H);
+            string strokeVariant = PlayerPrefs.GetString("StrokeVariant", StrokeType.variant_straight);
+            this.ConfigModel(strokeName, strokeVariant);
+        }
         #endregion
 
         #region STROKE DATA API
@@ -75,8 +83,6 @@ namespace Dollar.One {
             strokeClassification.test = StrokeType.test_negative;
             negativeList = GetUnistrokesFromFile(strokeClassification);
             Debug.Log("Initialize Model | positiveList:" + positiveList.Count + " | negativeList:"+ negativeList.Count);
-            //foreach (Unistroke u in positiveList)
-            //    Debug.Log(u.Points.Length);
         }
 
         public List<Unistroke> GetDataSet(StrokeTypeTest test)
@@ -114,26 +120,6 @@ namespace Dollar.One {
                     return result;
             }
             
-        }
-
-        public List<Unistroke> GetPositiveDataSet()
-        {
-            if (positiveList.Count == 0)
-            {
-                strokeClassification.test = StrokeType.test_positive;
-                positiveList = GetUnistrokesFromFile(strokeClassification);
-            }
-            return positiveList;
-        }
-
-        public List<Unistroke> GetNegativeeDataSet()
-        {
-            if (negativeList.Count == 0)
-            {
-                strokeClassification.test = StrokeType.test_negative;
-                negativeList = GetUnistrokesFromFile(strokeClassification);
-            }
-            return negativeList;
         }
 
         public void SaveDataSet(string test)

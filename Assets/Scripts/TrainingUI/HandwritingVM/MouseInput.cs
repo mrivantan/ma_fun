@@ -35,21 +35,17 @@ namespace Strokes.Handwriting
             RaycastHit2D hit = Physics2D.Raycast(wPos, Vector2.zero);
             if (hit.collider != null && hit.collider.CompareTag("box"))
             {
-                //Debug.Log(hit.collider.CompareTag("box"));
                 if (Input.GetMouseButtonDown(0))
                 {
                     controller.onStartDrawing.Invoke();
-                    //hpm.OnInitDrawing(sPos, wPos);
                 }
                 if (Input.GetMouseButton(0))
                 {
                     controller.onDrawing.Invoke();
-                    //hpm.OnDrawing(sPos, wPos);
                 }
                 if (Input.GetMouseButtonUp(0))
                 {
                     controller.onEndDrawing.Invoke();
-                    //hpm.OnEndDrawing(sPos, wPos);
                 }
             }
 

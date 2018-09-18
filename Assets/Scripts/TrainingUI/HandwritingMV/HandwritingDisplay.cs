@@ -21,17 +21,29 @@ public class HandwritingDisplay : MonoBehaviour {
                 if (line.positionCount == uiModel.currentInputWorldPoints.Length) return;
                 DrawStrokeFromVector3(uiModel.currentInputWorldPoints);
                 break;
-            case HandwritingDisplayType.InputResult:
+            case HandwritingDisplayType.InputRaw:
                 if (line.positionCount == uiModel.strokeInputPoints.Length) return;
                 DrawStrokeFromPoints(uiModel.strokeInputPoints);
                 break;
-            case HandwritingDisplayType.MatchNegative:
+            case HandwritingDisplayType.NegativeRaw:
                 if (line.positionCount == uiModel.bestNegativeMatchPoints.Length) return;
                 DrawStrokeFromPoints(uiModel.bestNegativeMatchPoints);
                 break;
-            case HandwritingDisplayType.MatchPositive:
+            case HandwritingDisplayType.PositiveRaw:
                 if (line.positionCount == uiModel.bestPositiveMatchPoints.Length) return;
                 DrawStrokeFromPoints(uiModel.bestPositiveMatchPoints);
+                break;
+            case HandwritingDisplayType.InputGesture:
+                if (line.positionCount == uiModel.strokeInputPoints.Length) return;
+                DrawGestureFromPoints(uiModel.strokeInputPoints);
+                break;
+            case HandwritingDisplayType.PositiveGesture:
+                if (line.positionCount == uiModel.strokeInputPoints.Length) return;
+                DrawGestureFromPoints(uiModel.bestPositiveMatchPoints);
+                break;
+            case HandwritingDisplayType.NegativeGesture:
+                if (line.positionCount == uiModel.strokeInputPoints.Length) return;
+                DrawGestureFromPoints(uiModel.bestNegativeMatchPoints);
                 break;
         }
 
@@ -41,6 +53,12 @@ public class HandwritingDisplay : MonoBehaviour {
     {
         line.positionCount = plot.Length;
         line.SetPositions(plot);
+    }
+
+    private void DrawGestureFromPoints(Dollar.One.Point[] points)
+    {
+        Dollar.One.Unistroke unistroke = new Dollar.One.Unistroke(points, Dollar.One.EvaluationType.ProportionateProtractor);
+        DrawStrokeFromPoints(unistroke.Points);
     }
 
     private void DrawStrokeFromPoints(Dollar.One.Point[] points)

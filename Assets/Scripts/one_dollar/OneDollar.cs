@@ -5,24 +5,12 @@ using UnityEngine;
 namespace Dollar.One { 
     /// <summary>
     /// Adapted from $1.js
+    /// Modified by Ivan
     /// </summary>
     public class OneDollar : MonoBehaviour {
 
         public Model model = new Model();
         public StrokeMeta currentMeta;
-        public string strokeName, strokeVariant;
-
-        /// <summary>
-        /// load model from playerprefs. Used by UI
-        /// </summary>
-        public void InitModel()
-        {
-            strokeName = PlayerPrefs.GetString("StrokeName", StrokeType.name_H);
-            strokeVariant = PlayerPrefs.GetString("StrokeVariant", StrokeType.variant_straight);
-            model.ConfigModel(strokeName, strokeVariant);
-        }
-
-
 
         public Result Recognize(Point[] points, Model.StrokeTypeTest test)
         {
@@ -74,7 +62,7 @@ namespace Dollar.One {
             }
             Debug.Log(msg);
 
-            Unistroke gesture = new Unistroke(strokeName, strokeVariant, testCat, points, evaluationType);
+            Unistroke gesture = new Unistroke(model.strokeClassification.name, model.strokeClassification.variant, testCat, points, evaluationType);
             if (testCat == StrokeType.test_positive)
             {
                 model.positiveList.Add(gesture);

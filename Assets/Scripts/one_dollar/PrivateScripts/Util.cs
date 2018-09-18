@@ -414,6 +414,18 @@ namespace Dollar.One
 
         public const string test_positive = "positive";
         public const string test_negative = "negative";
+
+        public static int VariantNameToIndex(string variantName)
+        {
+            int result = 0;
+            if( variantName == variant_slanted ||
+                variantName == variant_long ||
+                variantName == variant_backward)
+            {
+                result = 1;
+            }
+            return result;
+        }
     }
 
 
