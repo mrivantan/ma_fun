@@ -118,31 +118,7 @@ namespace Strokes.Handwriting
         #endregion
 
 
-        #region guiAPIs
-        public void AddGestureToPositiveList()
-        {
-            Point[] points = VecToPoint(pointList);
-            oneDollar.AddGesture(points, StrokeType.test_positive, EvaluationType.None); // add RAW points
-                                                                                         //Debug.Log("PositiveList Length: " + oneDollar.model.positiveList.Count);
 
-        }
-
-        public void AddGestureToNegativeList()
-        {
-            Point[] points = VecToPoint(pointList);
-            oneDollar.AddGesture(points, StrokeType.test_negative, EvaluationType.None);
-            //Debug.Log("NegativeList Length: " + oneDollar.model.negativeList.Count);
-        }
-
-        public void ResetPositiveSet()
-        {
-            oneDollar.DeleteAllGestures(StrokeType.test_positive);
-        }
-        public void ResetNegativeSet()
-        {
-            oneDollar.DeleteAllGestures(StrokeType.test_negative);
-        }
-        #endregion
 
         #region Core Event Actions
         private void InitializeDrawing()
@@ -170,7 +146,6 @@ namespace Strokes.Handwriting
         #endregion
 
         #region Private functions
-
         private Point[] VecToPoint(List<Vector2> vectors)
         {
             Point[] result = new Point[vectors.Count];

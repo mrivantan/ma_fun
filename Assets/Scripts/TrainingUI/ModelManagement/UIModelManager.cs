@@ -37,7 +37,7 @@ public class UIModelManager : MonoBehaviour {
         uiModel.currentMeta = oneDollar.currentMeta;
         uiModel.strokeName = uiModel.currentMeta.strokeName;
         uiModel.strokeLabel = uiModel.currentMeta.strokeLabel;
-        uiModel.descriptionIndex = uiModel.variantIndex = StrokeType.VariantNameToIndex(lastLoadedStroke);
+        uiModel.descriptionIndex = uiModel.variantIndex = StrokeType.VariantNameToIndex(lastLoadedVariant);
         uiModel.variant = uiModel.currentMeta.strokeVariants[uiModel.variantIndex];
         uiModel.description = uiModel.currentMeta.description[uiModel.descriptionIndex];
     }
@@ -63,5 +63,29 @@ public class UIModelManager : MonoBehaviour {
         //load the new model
         oneDollar.model.Init();
     }
+
+
+    #region guiAPIs
+    public void AddGestureToPositiveList()
+    {
+        Point[] points = uiModel.strokeInputPoints;
+        oneDollar.AddGesture(points, StrokeType.test_positive, EvaluationType.None);
+    }
+
+    public void AddGestureToNegativeList()
+    {
+        Point[] points = uiModel.strokeInputPoints;
+        oneDollar.AddGesture(points, StrokeType.test_negative, EvaluationType.None);
+    }
+
+    public void ResetPositiveSet()
+    {
+        oneDollar.DeleteAllGestures(StrokeType.test_positive);
+    }
+    public void ResetNegativeSet()
+    {
+        oneDollar.DeleteAllGestures(StrokeType.test_negative);
+    }
+    #endregion
 
 }
