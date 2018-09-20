@@ -45,3 +45,6 @@ TagManager:
   - name: StrokeFillAnimation
     uniqueID: 568998319
     locked: 0
+  - name: Handwriting
+    uniqueID: 3482063981
+    locked: 0
