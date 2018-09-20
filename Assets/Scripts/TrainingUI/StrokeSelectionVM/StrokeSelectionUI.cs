@@ -19,10 +19,10 @@ public class StrokeSelectionUI : MonoBehaviour {
 
     private void Start()
     {
-        // set list of names on UI
-        LoadNameOptions(uiModel.strokeName);
-        // set list of variants on UI
-        LoadVariantOptions(uiModel.currentMeta, uiModel.variantIndex);
+        //// set list of names on UI
+        //LoadNameOptions(uiModel.strokeName);
+        //// set list of variants on UI
+        //LoadVariantOptions(uiModel.currentMeta, uiModel.variantIndex);
     }
 
     private void OnGUI()
@@ -47,7 +47,7 @@ public class StrokeSelectionUI : MonoBehaviour {
         // update the model
         uiModelController.OnChangeStrokeName(dropName.value);
         // set list of variants on UI
-        LoadVariantOptions(uiModel.currentMeta, 0);
+        LoadVariantOptions();
 
     }
     /// <summary>
@@ -65,7 +65,7 @@ public class StrokeSelectionUI : MonoBehaviour {
     /// set list of names on UI
     /// </summary>
     /// <param name="m">current meta datum</param>
-    private void LoadNameOptions(string strokeName)
+    public void LoadNameOptions()
     {
         // set labels
         dropName.ClearOptions();
@@ -73,7 +73,7 @@ public class StrokeSelectionUI : MonoBehaviour {
         int val = 0;
         foreach (KeyValuePair<string, StrokeMeta> kvp in uiModel.dictionary) { 
             options.Insert(kvp.Value.index, new Dropdown.OptionData { text = kvp.Value.strokeLabel });
-            if (kvp.Value.strokeName == strokeName) val = kvp.Value.index;
+            if (kvp.Value.strokeName == uiModel.strokeName) val = kvp.Value.index;
         }
         dropName.options = options;
         // change selection on dropdown
@@ -81,17 +81,17 @@ public class StrokeSelectionUI : MonoBehaviour {
 
     }
 
-    private void LoadVariantOptions(StrokeMeta m, int variantIndex)
+    public void LoadVariantOptions()
     {
         // set the labels
-        string[] variants = m.strokeVariants;
+        string[] variants = uiModel.currentMeta.strokeVariants;
         dropVariant.ClearOptions();
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>(variants.Length);
         for (int i = 0; i < variants.Length; i++)
             options.Add(new Dropdown.OptionData { text = variants[i] });
         dropVariant.options = options;
         // change selection on dropdown
-        dropVariant.value = variantIndex;
+        dropVariant.value = 0;
     }
     #endregion
 

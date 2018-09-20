@@ -8,15 +8,11 @@ using Dollar.One;
 public class UIModelManager : MonoBehaviour {
 
     public OneDollar oneDollar;
-    private UIModel uiModel;
+    public UIModel uiModel;
 
     string lastLoadedStroke, lastLoadedVariant;
 
-    private void Start()
-    {
-        uiModel = GetComponent<UIModel>();       
-    }
-
+    #region Stroke Headers Management
     public void InitSourceModel()
     {
         // load preferences of last used stroke for user convenience
@@ -63,6 +59,73 @@ public class UIModelManager : MonoBehaviour {
         //load the new model
         oneDollar.model.Init();
     }
+    #endregion
+
+    #region Points Management
+    public void ClearModelBestNegativeMatchPoints()
+    {
+        uiModel.bestNegativeMatchPoints = new Point[] { };
+        uiModel.negativeListCount = 0;
+        uiModel.bestNegativeMatchScore = 0;
+    }
+    public void ClearModelBestPositiveMatchPoints()
+    {
+        uiModel.bestPositiveMatchPoints = new Point[] { };
+        uiModel.positiveListCount = 0;
+        uiModel.bestPositiveMatchScore = 0;
+    }
+    public void ClearModelInputPoints()
+    {
+        uiModel.strokeInputPoints = new Point[] { };
+    }
+    public void ClearModelInputWorldPoints()
+    {
+        uiModel.currentInputWorldPoints = new Vector3[] { };
+    }
+
+    public void SetModelBestNegativeMatchPoints()
+    {
+        Point[] points = VecToPoint(uiModel.pointList);
+        Result result = oneDollar.Recognize(points, Model.StrokeTypeTest.Negative);
+        if (result.Points != null)
+        {
+            uiModel.bestNegativeMatchPoints = result.Points;
+            uiModel.negativeListCount = result.Points.Length;
+            uiModel.bestNegativeMatchScore = result.Score;
+        }
+    }
+    public void SetModelBestPositiveMatchPoints()
+    {
+        Point[] points = VecToPoint(uiModel.pointList);
+        Result result = oneDollar.Recognize(points, Model.StrokeTypeTest.Positive);
+        if (result.Points != null)
+        {
+            uiModel.bestPositiveMatchPoints = result.Points;
+            uiModel.positiveListCount = result.Points.Length;
+            uiModel.bestPositiveMatchScore = result.Score;
+        }
+    }
+    public void SetModelInputPoints()
+    {
+        uiModel.strokeInputPoints = VecToPoint(uiModel.pointList);
+    }
+    public void SetModelInputWorldPoints()
+    {
+        uiModel.currentInputWorldPoints = uiModel.worldPointList.ToArray();
+    }
+
+    public void AddPointToList(Vector2 sPos, Vector3 wPos)
+    {
+        uiModel.pointList.Add(sPos);
+        uiModel.worldPointList.Add(wPos);
+    }
+
+    public void ClearPointList()
+    {
+        uiModel.pointList.Clear();
+        uiModel.worldPointList.Clear();
+    }
+    #endregion
 
 
     #region guiAPIs
@@ -88,4 +151,15 @@ public class UIModelManager : MonoBehaviour {
     }
     #endregion
 
+    #region Helper functions
+    private Point[] VecToPoint(List<Vector2> vectors)
+    {
+        Point[] result = new Point[vectors.Count];
+        for (int i = 0; i < result.Length; i++)
+        {
+            result[i] = new Point(vectors[i].x, vectors[i].y);
+        }
+        return result;
+    }
+    #endregion
 }

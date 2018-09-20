@@ -11,15 +11,14 @@ namespace Dollar.One {
 
         public List<Unistroke> positiveList = new List<Unistroke>();
         public List<Unistroke> negativeList = new List<Unistroke>();
-
         public StrokeClassification strokeClassification = new StrokeClassification();
-
-
-        public Dictionary<string, StrokeMeta> strokeDictionary = new Dictionary<string, StrokeMeta>();
+        public Dictionary<string, StrokeMeta> strokeDictionary;
 
         public enum StrokeTypeTest { Negative, Positive, All};
         public Model()
         {
+            strokeDictionary = new Dictionary<string, StrokeMeta>();
+
             string[] none = { StrokeType.variant_none };
             string[] shortlong = { StrokeType.variant_short, StrokeType.variant_long };
             string[] straightslanted = { StrokeType.variant_straight, StrokeType.variant_slanted };

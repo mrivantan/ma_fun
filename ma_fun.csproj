@@ -309,6 +309,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\FillStrokeAnimation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordMeta.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordModel.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordModelController.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordModelManager.cs" />
     <Compile Include="Assets\Scripts\one_dollar\OneDollar.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Model.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Point.cs" />
@@ -317,10 +322,10 @@
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\StrokeMeta_Struct.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Unistroke.cs" />
     <Compile Include="Assets\Scripts\one_dollar\PrivateScripts\Util.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\HandwritingMV\HandwritingDisplay.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\HandwritingController.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\HandwritingPointsManager.cs" />
-    <Compile Include="Assets\Scripts\TrainingUI\HandwritingVM\MouseInput.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\Handwriting\HandwritingController.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\Handwriting\HandwritingDisplay.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\Handwriting\HandwritingPointsManager.cs" />
+    <Compile Include="Assets\Scripts\TrainingUI\Handwriting\MouseInput.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModel.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelController.cs" />
     <Compile Include="Assets\Scripts\TrainingUI\ModelManagement\UIModelManager.cs" />

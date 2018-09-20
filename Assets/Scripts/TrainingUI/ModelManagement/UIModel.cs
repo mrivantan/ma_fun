@@ -14,7 +14,7 @@ public class UIModel : MonoBehaviour {
     public int variantIndex;
     public string description;
     public int descriptionIndex;
-    public Dictionary<string, StrokeMeta> dictionary;
+    public Dictionary<string, StrokeMeta> dictionary = new Dictionary<string, StrokeMeta>();
     [Header("Recognition result from testing input")]
     public float bestPositiveMatchScore;
     public float bestNegativeMatchScore;
@@ -25,6 +25,10 @@ public class UIModel : MonoBehaviour {
     public Point[] bestNegativeMatchPoints;
     public Vector3[] currentInputWorldPoints;
 
+    [HideInInspector]
+    public List<Vector2> pointList;
+    [HideInInspector]
+    public List<Vector3> worldPointList;
 
     public float BestOverallMatchScore
     {
