@@ -38,9 +38,9 @@ namespace App.Model.Word {
                 { (int)IntersectionType.CanIntersect, (int)IntersectionType.CanIntersect, (int)IntersectionType.Self }
             };
             // 468 40, 262 540, 246 360
-            word.BBSizes = new Vector2[] { new Vector2(468, 40), new Vector2(0, 0), new Vector2(0, 0) };
+            word.BBSizes = new Vector2[] { new Vector2(468, 40), new Vector2(262, 540), new Vector2(246, 360) };
             // 300 370, 198 300, 411 210
-            word.Centroids = new Vector2[] { new Vector2(0, 0), new Vector2(0, 0), new Vector2(0, 0) };
+            word.Centroids = new Vector2[] { new Vector2(300, 370), new Vector2(198, 300), new Vector2(411, 210) };
             model.wordDictionary.Add("大", word);
         }
     }

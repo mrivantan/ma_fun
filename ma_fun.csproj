@@ -309,7 +309,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AppPrototype\StateMachine\SceneController.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\FillStrokeAnimation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\FillStrokeAnimationManager.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\RunWalkthroughAnimation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\IntersectionValidation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\PositionValidation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\QualityValidation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\SizeValidation.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordMeta.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordModel.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\WordModel\WordModelController.cs" />

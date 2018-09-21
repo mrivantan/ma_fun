@@ -64,6 +64,11 @@ public class FillStrokeAnimation : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        InitializePosition();
+    }
+
 
     private void LeftToRightAnimation()
     {

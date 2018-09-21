@@ -17,7 +17,7 @@ public class UpdateModelListCount : MonoBehaviour {
         }
         for (int i = 0; i < negativeListCountLabels.Length; i++)
         {
-            negativeListCountLabels[i].text = uiModel.positiveListCount.ToString();
+            negativeListCountLabels[i].text = uiModel.negativeListCount.ToString();
         }
     }
 
