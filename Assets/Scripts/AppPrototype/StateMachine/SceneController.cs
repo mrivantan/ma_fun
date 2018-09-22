@@ -34,17 +34,6 @@ namespace App {
         public UnityAction RunTest;
 
         void Start () {
-
-
-
-
-
-
-
-
-
-
-
             onInit.Invoke();
 	    }
 	
@@ -53,7 +42,89 @@ namespace App {
 		
 	    }
 
+        public void Introduction()
+        {
+            onIntroduction.Invoke();
+        }
+        public void LoadTestModel()
+        {
+
+        }
+
+        public void StrokeInstruction()
+        {
+            onStrokeInstruction.Invoke();
+        }
+
+        public void WatchingInput()
+        {
+            onWatchingInput.Invoke();
+        }
 
 
+        public void RollbackStateParams()
+        {
+            onRollbackStateParams.Invoke();
+        }
+
+        public void TestInput_Quality()
+        {
+            onTestInput_Quality.Invoke();
+        }
+
+        public void TestInput_Position()
+        {
+            onTestInput_Position.Invoke();
+        }
+
+        public void TestInput_Size()
+        {
+            onTestInput_Size.Invoke();
+        }
+
+        public void TestInput_Intersection()
+        {
+            onTestInput_Intersection.Invoke();
+        }
+
+        public void FailFeedback_Quality()
+        {
+            onFailFeedback_Quality.Invoke();
+        }
+
+        public void FailFeedback_Position()
+        {
+            onFailFeedback_Position.Invoke();
+        }
+
+        public void FailFeedback_Size()
+        {
+            onFailFeedback_Size.Invoke();
+        }
+
+        public void FailFeedback_Intersection()
+        {
+            onFailFeedback_Intersection.Invoke();
+        }
+
+        public void PassFeedback_Stroke()
+        {
+            onPassFeedback_Stroke.Invoke();
+        }
+
+        public void AdvanceStateParams()
+        {
+            onAdvanceStateParams.Invoke();
+        }
+
+        public void PassFeedback_Word()
+        {
+            onPassFeedback_Word.Invoke();
+        }
+
+        public void LoadUI_SceneManagement()
+        {
+
+        }
     }
 }

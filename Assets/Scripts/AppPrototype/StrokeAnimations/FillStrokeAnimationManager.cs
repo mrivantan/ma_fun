@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FillStrokeAnimationManager : MonoBehaviour {
 
+    public float delayStart;
+
     private List<FillStrokeAnimation> strokeAnimations;
 	// Use this for initialization
 	void Start () {
@@ -36,7 +38,8 @@ public class FillStrokeAnimationManager : MonoBehaviour {
 
     private IEnumerator RunAllAnimations()
     {
-        foreach(FillStrokeAnimation anim in strokeAnimations)
+        yield return new WaitForSeconds(delayStart);
+        foreach (FillStrokeAnimation anim in strokeAnimations)
         {
             Debug.Log("Start animation for stroke: " + anim.transform.parent.name);
             anim.Trigger();

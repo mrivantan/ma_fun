@@ -42,6 +42,17 @@ public class UIModelManager : MonoBehaviour {
         ConfigHeaders();
     }
 
+    public void UpdateListCount()
+    {
+        uiModel.positiveListCount = oneDollar.model.positiveList.Count;
+        uiModel.negativeListCount = oneDollar.model.negativeList.Count;
+    }
+    public void UpdateListCount<T>(T any)
+    {
+        UpdateListCount();
+    }
+
+
     public void UpdateStrokeName(int strokeIndex)
     {
         // get new datum
@@ -90,7 +101,6 @@ public class UIModelManager : MonoBehaviour {
         if (result.Points != null)
         {
             uiModel.bestNegativeMatchPoints = result.Points;
-            uiModel.negativeListCount = result.Points.Length;
             uiModel.bestNegativeMatchScore = result.Score;
         }
     }
@@ -101,7 +111,6 @@ public class UIModelManager : MonoBehaviour {
         if (result.Points != null)
         {
             uiModel.bestPositiveMatchPoints = result.Points;
-            uiModel.positiveListCount = result.Points.Length;
             uiModel.bestPositiveMatchScore = result.Score;
         }
     }

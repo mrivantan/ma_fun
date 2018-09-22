@@ -23,22 +23,27 @@ public class UIModelController : MonoBehaviour {
         OnInit += manager.oneDollar.InitOneDollar;
         OnInit += manager.InitSourceModel;
         OnInit += manager.ConfigHeaders;
+        OnInit += manager.UpdateListCount;
 
         OnInit();
         onPostInit.Invoke();
 
         OnChangeStrokeName += manager.UpdateStrokeName;
         OnChangeStrokeName += manager.ConfigHeaders;
+        OnChangeStrokeName += manager.UpdateListCount;
 
 
         OnChangeVariant += manager.UpdateStrokeVariant;
         OnChangeVariant += manager.ConfigHeaders;
+        OnChangeVariant += manager.UpdateListCount;
 
         AddInputToPositiveSet += manager.AddGestureToPositiveList;
+        AddInputToPositiveSet += manager.UpdateListCount;
         onAddToPositiveSet.AddListener(AddInputToPositiveSet);
 
 
         AddInputToNegativeSet += manager.AddGestureToNegativeList;
+        AddInputToNegativeSet += manager.UpdateListCount;
         onAddToNegativeSet.AddListener(AddInputToNegativeSet);
 
         ClearViewPoints += manager.ClearModelInputPoints;
