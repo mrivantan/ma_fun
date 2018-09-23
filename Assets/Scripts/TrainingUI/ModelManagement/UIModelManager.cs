@@ -41,6 +41,10 @@ public class UIModelManager : MonoBehaviour {
     {
         ConfigHeaders();
     }
+    public void ConfigHeaders<T,U>(T t, U u)
+    {
+        ConfigHeaders();
+    }
 
     public void UpdateListCount()
     {
@@ -51,10 +55,15 @@ public class UIModelManager : MonoBehaviour {
     {
         UpdateListCount();
     }
+    public void UpdateListCount<T,U>(T t, U u)
+    {
+        UpdateListCount();
+    }
 
 
     public void UpdateStrokeName(int strokeIndex)
     {
+        Debug.Log("Update Stroke Name to : " + strokeIndex);
         // get new datum
         oneDollar.currentMeta = uiModel.dictionary.GetMetaByIndex(strokeIndex);
         // set the new stroke name
@@ -70,6 +79,15 @@ public class UIModelManager : MonoBehaviour {
         //load the new model
         oneDollar.model.Init();
     }
+
+    public void UpdateStroke(string strokeName, string variant)
+    {
+        Debug.Log("Update Stroke data: " + strokeName + ", " + variant);
+        PlayerPrefs.SetString("StrokeName", strokeName);
+        PlayerPrefs.SetString("StrokeVariant", variant);
+        oneDollar.model.Init();
+    }
+
     #endregion
 
     #region Points Management
@@ -137,7 +155,7 @@ public class UIModelManager : MonoBehaviour {
     #endregion
 
 
-    #region guiAPIs
+    #region Gesture List Management
     public void AddGestureToPositiveList()
     {
         Point[] points = uiModel.strokeInputPoints;

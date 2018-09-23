@@ -11,7 +11,7 @@ namespace App.Validation.Size {
         public Animator sceneSM;
         public StrokeSize[] strokes;
 
-        public Vector2 canvasRefRes = new Vector2(768, 1024);
+        public Vector2 canvasRefRes = new Vector2(768, 1280);
 
         [SerializeField]
         private Vector2 idealSize;

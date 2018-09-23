@@ -16,7 +16,7 @@ public class UIModelController : MonoBehaviour {
     public UnityAction<int> OnChangeStrokeName, OnChangeVariant;
     public UnityAction AddInputToPositiveSet, AddInputToNegativeSet;
     public UnityAction ClearViewPoints, SetViewPoints;
-
+    public UnityAction<string, string> OnChangeStroke;
     // Use this for initialization
     void Start () {
         manager = GetComponent<UIModelManager>();
@@ -26,7 +26,7 @@ public class UIModelController : MonoBehaviour {
         OnInit += manager.UpdateListCount;
 
         OnInit();
-        onPostInit.Invoke();
+        
 
         OnChangeStrokeName += manager.UpdateStrokeName;
         OnChangeStrokeName += manager.ConfigHeaders;
@@ -36,6 +36,10 @@ public class UIModelController : MonoBehaviour {
         OnChangeVariant += manager.UpdateStrokeVariant;
         OnChangeVariant += manager.ConfigHeaders;
         OnChangeVariant += manager.UpdateListCount;
+
+        OnChangeStroke += manager.UpdateStroke;
+        OnChangeStroke += manager.ConfigHeaders;
+        OnChangeStroke += manager.UpdateListCount;
 
         AddInputToPositiveSet += manager.AddGestureToPositiveList;
         AddInputToPositiveSet += manager.UpdateListCount;
@@ -56,6 +60,8 @@ public class UIModelController : MonoBehaviour {
         SetViewPoints += manager.SetModelBestNegativeMatchPoints;
         SetViewPoints += manager.SetModelBestPositiveMatchPoints;
 
+
+        onPostInit.Invoke();
     }
 
 

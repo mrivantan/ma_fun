@@ -44,6 +44,7 @@ public class StrokeSelectionUI : MonoBehaviour {
     /// </summary>
     public void UpdateStrokeName()
     {
+
         // update the model
         uiModelController.OnChangeStrokeName(dropName.value);
         // set list of variants on UI

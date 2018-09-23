@@ -34,13 +34,25 @@ public class FillStrokeAnimationManager : MonoBehaviour {
 
     public void RunCurrentStroke()
     {
+        StartCoroutine(RunCurrentStrokeSequence());
+    }
+
+    private IEnumerator RunCurrentStrokeSequence()
+    {
         int i = sceneSM.GetInteger("StrokeCount");
         strokeAnimations[i].Trigger();
+        yield return new WaitForSeconds(strokeAnimations[i].duration);
+        sceneSM.SetTrigger("AdvanceState");
     }
 
     public void RunWalkthroughAnimation()
     {
-        StartCoroutine(RunAllAnimations());
+        StartCoroutine(WalkthroughAnimationSequence());
+    }
+    private IEnumerator WalkthroughAnimationSequence()
+    {
+        yield return StartCoroutine(RunAllAnimations());
+        yield return StartCoroutine(ResetAllAnimations_E());
     }
 
     private IEnumerator RunAllAnimations()
@@ -53,9 +65,16 @@ public class FillStrokeAnimationManager : MonoBehaviour {
             yield return new WaitForSeconds(anim.duration);
         }
         yield return new WaitForSeconds(delayEnd);
-        sceneSM.GetComponent<Animator>().SetTrigger("AdvanceState");
+        sceneSM.SetTrigger("AdvanceState");
     }
 
+
+    private IEnumerator ResetAllAnimations_E()
+    {
+        foreach (FillStrokeAnimation anim in strokeAnimations)
+            anim.Reset();
+        yield return null;
+    }
     public void ResetAllAnimations()
     {
         foreach (FillStrokeAnimation anim in strokeAnimations)

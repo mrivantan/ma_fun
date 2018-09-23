@@ -18,12 +18,6 @@ namespace Dollar.One {
             currentMeta = model.strokeDictionary[PlayerPrefs.GetString("StrokeName", StrokeType.name_H)];
         }
 
-        //private void Awake()
-        //{
-        //    model = new Model();
-        //    currentMeta = model.strokeDictionary[PlayerPrefs.GetString("StrokeName", StrokeType.name_H)];
-        //}
-
         public Result Recognize(Point[] points, Model.StrokeTypeTest test)
         {
             Result result;

@@ -6,12 +6,12 @@ namespace App.Model.Word {
     [RequireComponent(typeof(WordModel))]
     public class WordModelManager : MonoBehaviour {
 
+        public WordModel model;
         public string wordName;
         public Vector2 sizeTolerance = new Vector2(80f, 80f);
         public Vector2 positionTolerance = new Vector2(100f, 100f);
 
-        private WordModel model;
-        void Start () {
+        public void Init () {
             model = GetComponent<WordModel>();
 	    }
 

@@ -33,14 +33,41 @@ namespace App {
 
         public UnityAction RunTest;
 
+        private AppSceneManager manager;
+        private UnityAction m_Init;
+        private UnityAction m_LoadTestModel;
+        private UnityAction m_AdvanceStateParams;
+        private UnityAction m_RollbackStateParams;
         void Start () {
+            manager = GetComponent<AppSceneManager>();
+            m_Init += manager.wordModelManager.Init;
+            m_Init += manager.Init;
+            m_Init += manager.ResetCheck_Quality;
+            m_Init += manager.ResetCheck_Position;
+            m_Init += manager.ResetCheck_Size;
+            m_Init += manager.AdvanceState;
+            onInit.AddListener(m_Init);
             onInit.Invoke();
-	    }
-	
 
-	    void Update () {
-		
-	    }
+            m_LoadTestModel += manager.UpdateStroke;
+            m_LoadTestModel += manager.AdvanceState;
+            onLoadTestModel.AddListener(m_LoadTestModel);
+
+            m_AdvanceStateParams += manager.IncreaseStrokeCount;
+            m_AdvanceStateParams += manager.IncreaseStrokeGauge;
+            m_AdvanceStateParams += manager.ResetCheck_Quality;
+            m_AdvanceStateParams += manager.ResetCheck_Position;
+            m_AdvanceStateParams += manager.ResetCheck_Size;
+            m_AdvanceStateParams += manager.AdvanceState;
+            onAdvanceStateParams.AddListener(m_AdvanceStateParams);
+
+            m_RollbackStateParams += manager.ResetCheck_Quality;
+            m_RollbackStateParams += manager.ResetCheck_Position;
+            m_RollbackStateParams += manager.ResetCheck_Size;
+            m_RollbackStateParams += manager.AdvanceState;
+            onRollbackStateParams.AddListener(m_RollbackStateParams);
+
+        }
 
         public void Introduction()
         {
@@ -48,7 +75,7 @@ namespace App {
         }
         public void LoadTestModel()
         {
-
+            onLoadTestModel.Invoke();
         }
 
         public void StrokeInstruction()
@@ -124,7 +151,7 @@ namespace App {
 
         public void LoadUI_SceneManagement()
         {
-
+            onLoadUI_SceneManagement.Invoke();
         }
     }
 }
