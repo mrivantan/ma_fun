@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FillStrokeAnimationManager : MonoBehaviour {
 
-    public float delayStart;
+    public Animator sceneSM;
+    public float delayStart, delayEnd;
 
     private List<FillStrokeAnimation> strokeAnimations;
 	// Use this for initialization
@@ -31,6 +32,12 @@ public class FillStrokeAnimationManager : MonoBehaviour {
         Debug.Log("Stroke animations loaded. Count: " + strokeAnimations.Count);
     }
 
+    public void RunCurrentStroke()
+    {
+        int i = sceneSM.GetInteger("StrokeCount");
+        strokeAnimations[i].Trigger();
+    }
+
     public void RunWalkthroughAnimation()
     {
         StartCoroutine(RunAllAnimations());
@@ -45,6 +52,8 @@ public class FillStrokeAnimationManager : MonoBehaviour {
             anim.Trigger();
             yield return new WaitForSeconds(anim.duration);
         }
+        yield return new WaitForSeconds(delayEnd);
+        sceneSM.GetComponent<Animator>().SetTrigger("AdvanceState");
     }
 
     public void ResetAllAnimations()

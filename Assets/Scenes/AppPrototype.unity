@@ -581,9 +581,9 @@ MonoBehaviour:
   onIntroduction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985034277}
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 1985034276}
+        m_MethodName: RunWalkthroughAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -596,7 +596,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onStrokeInstruction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985034276}
+        m_MethodName: RunCurrentStroke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onLoadTestModel:
@@ -691,7 +702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &431933088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1044,7 +1055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &541451088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2229,7 +2240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259835385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3134,24 +3145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b49a7b6bea59345b29e683bf49dff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneSM: {fileID: 385318544}
   delayStart: 1
---- !u!95 &1985034277
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1985034275}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1fa6d4eac93776c4094fe2b386f94079, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  delayEnd: 0
 --- !u!1 &1988745719
 GameObject:
   m_ObjectHideFlags: 0
