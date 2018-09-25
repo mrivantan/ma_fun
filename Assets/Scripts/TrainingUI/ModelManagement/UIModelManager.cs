@@ -91,22 +91,26 @@ public class UIModelManager : MonoBehaviour {
     #endregion
 
     #region Points Management
+    public void ClearModelBestNegativeMatchPoints<T>(T t) { ClearModelBestNegativeMatchPoints(); }
     public void ClearModelBestNegativeMatchPoints()
     {
         uiModel.bestNegativeMatchPoints = new Point[] { };
-        uiModel.negativeListCount = 0;
+        //uiModel.negativeListCount = 0;
         uiModel.bestNegativeMatchScore = 0;
     }
+    public void ClearModelBestPositiveMatchPoints<T>(T t) { ClearModelBestPositiveMatchPoints(); }
     public void ClearModelBestPositiveMatchPoints()
     {
         uiModel.bestPositiveMatchPoints = new Point[] { };
-        uiModel.positiveListCount = 0;
+        //uiModel.positiveListCount = 0;
         uiModel.bestPositiveMatchScore = 0;
     }
+    public void ClearModelInputPoints<T>(T t) { ClearModelInputPoints(); }
     public void ClearModelInputPoints()
     {
         uiModel.strokeInputPoints = new Point[] { };
     }
+    public void ClearModelInputWorldPoints<T>(T t) { ClearModelInputWorldPoints(); }
     public void ClearModelInputWorldPoints()
     {
         uiModel.currentInputWorldPoints = new Vector3[] { };

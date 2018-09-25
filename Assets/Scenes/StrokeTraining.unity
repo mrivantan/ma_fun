@@ -906,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 5
-  offset: {x: 0, y: 545, z: 9}
+  offset: {x: 0, y: 470, z: 9}
 --- !u!1 &179331398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 6
-  offset: {x: 575, y: 1125, z: 9}
+  offset: {x: 575, y: 1050, z: 9}
 --- !u!1 &191848925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 3
-  offset: {x: -365, y: 545, z: 9}
+  offset: {x: -365, y: 470, z: 9}
 --- !u!1 &232050547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 403, y: -971}
+  m_AnchoredPosition: {x: 403, y: -886.27}
   m_SizeDelta: {x: 320, y: 320}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &232050549
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 4
-  offset: {x: 210, y: 1125, z: 9}
+  offset: {x: 210, y: 1050, z: 9}
 --- !u!1 &619560752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 2
-  offset: {x: 575, y: 1125, z: 9}
+  offset: {x: 575, y: 1050, z: 9}
 --- !u!1 &675114807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3094,7 +3094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 616, y: 1324.7}
+  m_AnchoredPosition: {x: 620.4, y: 1240}
   m_SizeDelta: {x: 137.1, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &833833963
@@ -3502,7 +3502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 1
-  offset: {x: 0, y: 545, z: 9}
+  offset: {x: 0, y: 470, z: 9}
 --- !u!1 &940777717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 1
-  offset: {x: -365, y: 545, z: 9}
+  offset: {x: -365, y: 470, z: 9}
 --- !u!1 &968676444
 GameObject:
   m_ObjectHideFlags: 0
@@ -5738,7 +5738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 2
-  offset: {x: 210, y: 1125, z: 9}
+  offset: {x: 210, y: 1050, z: 9}
 --- !u!1 &1577383115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6939,7 +6939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187.71, y: -108.01}
+  m_AnchoredPosition: {x: 187.71, y: -145.4037}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027987286
@@ -7391,7 +7391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187.55963, y: -108.006294}
+  m_AnchoredPosition: {x: -187.55963, y: -145.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147284040

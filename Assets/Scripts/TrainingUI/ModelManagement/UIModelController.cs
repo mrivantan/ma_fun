@@ -31,11 +31,19 @@ public class UIModelController : MonoBehaviour {
         OnChangeStrokeName += manager.UpdateStrokeName;
         OnChangeStrokeName += manager.ConfigHeaders;
         OnChangeStrokeName += manager.UpdateListCount;
+        OnChangeStrokeName += manager.ClearModelInputPoints;
+        OnChangeStrokeName += manager.ClearModelInputWorldPoints;
+        OnChangeStrokeName += manager.ClearModelBestNegativeMatchPoints;
+        OnChangeStrokeName += manager.ClearModelBestPositiveMatchPoints;
 
 
         OnChangeVariant += manager.UpdateStrokeVariant;
         OnChangeVariant += manager.ConfigHeaders;
         OnChangeVariant += manager.UpdateListCount;
+        OnChangeVariant += manager.ClearModelInputPoints;
+        OnChangeVariant += manager.ClearModelInputWorldPoints;
+        OnChangeVariant += manager.ClearModelBestNegativeMatchPoints;
+        OnChangeVariant += manager.ClearModelBestPositiveMatchPoints;
 
         OnChangeStroke += manager.UpdateStroke;
         OnChangeStroke += manager.ConfigHeaders;
