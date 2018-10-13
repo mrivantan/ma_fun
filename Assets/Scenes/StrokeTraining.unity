@@ -906,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 5
-  offset: {x: 0, y: 470, z: 9}
+  offset: {x: 0, y: 500, z: 9}
 --- !u!1 &179331398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiModel: {fileID: 834820900}
   DisplayType: 3
-  offset: {x: -365, y: 470, z: 9}
+  offset: {x: -365, y: 500, z: 9}
 --- !u!1 &232050547
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,35 @@ namespace App.Model.Word {
             // 300 370, 198 300, 411 210
             word.Centroids = new Vector2[] { new Vector2(300, 370), new Vector2(198, 300), new Vector2(411, 210) };
             model.wordDictionary.Add("大", word);
+
+
+            WordMeta word2 = new WordMeta();
+            word2.Word = "末";
+            word2.Id = 1;
+            word2.Strokes = new string[] {
+                StrokeType.name_H,
+                StrokeType.name_H,
+                StrokeType.name_S,
+                StrokeType.name_P,
+                StrokeType.name_N
+            };
+            word2.Variants = new string[] {
+                StrokeType.variant_straight,
+                StrokeType.variant_straight,
+                StrokeType.variant_none,
+                StrokeType.variant_none,
+                StrokeType.variant_none
+            };
+            word2.Intersections = new int[,] {
+                { (int)IntersectionType.Self, (int)IntersectionType.NoIntersect, (int)IntersectionType.MustIntersect, (int)IntersectionType.NoIntersect, (int)IntersectionType.NoIntersect },
+                { (int)IntersectionType.NoIntersect, (int)IntersectionType.Self, (int)IntersectionType.MustIntersect, (int)IntersectionType.CanIntersect, (int)IntersectionType.CanIntersect },
+                { (int)IntersectionType.MustIntersect, (int)IntersectionType.MustIntersect, (int)IntersectionType.Self, (int)IntersectionType.CanIntersect, (int)IntersectionType.CanIntersect},
+                { (int)IntersectionType.NoIntersect, (int)IntersectionType.CanIntersect, (int)IntersectionType.MustIntersect, (int)IntersectionType.Self, (int)IntersectionType.CanIntersect },
+                { (int)IntersectionType.NoIntersect, (int)IntersectionType.CanIntersect, (int)IntersectionType.MustIntersect, (int)IntersectionType.CanIntersect, (int)IntersectionType.Self }
+            };
+
+            model.wordDictionary.Add(word2.Word, word2);
+
         }
     }
 

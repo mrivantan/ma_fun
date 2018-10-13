@@ -11,7 +11,7 @@ namespace App.Validation.Size {
         public Animator sceneSM;
         public StrokeSize[] strokes;
 
-        public Vector2 canvasRefRes = new Vector2(768, 1280);
+        public Vector2 canvasRefRes = new Vector2(768, 1024);
 
         [SerializeField]
         private Vector2 idealSize;
@@ -32,6 +32,7 @@ namespace App.Validation.Size {
 
             idealSize = GetWorldSize(strokes[strokeIndex].stroke);
             inputSize = BoundingBoxSize(strokeModel.worldPointList.ToArray());
+
             Debug.Log("Testing input size: " + inputSize + " against Stroke ideal size: " + idealSize);
 
             sceneSM.SetBool("PassSize", false);
@@ -65,8 +66,9 @@ namespace App.Validation.Size {
         private Vector2 GetWorldSize(RectTransform rt)
         {
             Vector2 s = new Vector2(rt.rect.size.x, rt.rect.size.y);
-            float camS = Camera.main.orthographicSize;
-            Vector2 scaledSize = new Vector2(s.x / canvasRefRes.x * camS, s.y / canvasRefRes.x * camS);
+            //Debug.Log("expected width:" + s.x);
+            float camS = Camera.main.orthographicSize * 2;
+            Vector2 scaledSize = new Vector2(s.x / canvasRefRes.y * camS, s.y / canvasRefRes.y * camS);
 
             return scaledSize;
         }

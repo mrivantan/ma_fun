@@ -311,12 +311,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AppPrototype\FailFeedbackAnimations\FailText.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\GameManager.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\InstructionAnimations\CompleteSequenceCallback.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\InstructionAnimations\InstructionAnimationManager.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\Introduction\IntroductionManager.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StateMachine\AppSceneManager.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StateMachine\SceneController.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StateMachine\TriggerEventOnEnter.cs" />
-    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\FillStrokeAnimation.cs" />
-    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\FillStrokeAnimationManager.cs" />
-    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations\RunWalkthroughAnimation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations[old]\FillStrokeAnimation.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations[old]\FillStrokeAnimationManager.cs" />
+    <Compile Include="Assets\Scripts\AppPrototype\StrokeAnimations[old]\RunWalkthroughAnimation.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\IntersectionValidation.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\PositionValidation.cs" />
     <Compile Include="Assets\Scripts\AppPrototype\StrokeValidations\QualityValidation.cs" />
